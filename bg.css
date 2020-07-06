@@ -1,0 +1,8 @@
+.svg {
+    background-color: #000000;
+    background-image: url("bg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+}
