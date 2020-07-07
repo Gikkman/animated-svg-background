@@ -1,0 +1,26 @@
+.svg {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.svg::before {
+    content: "";
+    width: calc(max(150vw, 150vh));
+    height: calc(max(150vw, 150vh));
+    flex-shrink: 0;
+
+    background-image: url('bg.svg');
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    animation: spin 240s linear 0s infinite forwards;
+}
+
+@keyframes spin {
+    from {transform: rotate(0deg); }
+    to {transform: rotate(360deg); }
+}
