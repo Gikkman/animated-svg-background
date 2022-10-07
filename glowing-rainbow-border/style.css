@@ -1,0 +1,92 @@
+/* Custom styles for the demo */
+body{
+    font-family: Lato, sans-serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: white;
+    
+    margin: 0;
+    background: #999;
+  }
+  .wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  
+  .box {
+    /* Required properties */
+    position: relative;
+    background: #444;
+  
+    /* Use  your own styles here */
+    padding: 20px;
+    width: auto;
+    height: auto;  
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 5px;
+  }
+  
+  .box:before {
+    content: "";
+    z-index: -1;
+    
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    
+    --border-width: 6px;
+    border-radius: inherit;
+    top: calc(-2 * var(--border-width));
+    left: calc(-2 * var(--border-width));
+    width: calc(100% + var(--border-width) * 4);
+    height: calc(100% + var(--border-width) * 4);
+    filter: blur(var(--border-width));
+    
+    background: linear-gradient(
+        60deg,
+        hsl(224, 85%, 66%),
+        hsl(269, 85%, 66%),
+        hsl(314, 85%, 66%),
+        hsl(359, 85%, 66%),
+        hsl(44, 85%, 66%),
+        hsl(89, 85%, 66%),
+        hsl(134, 85%, 66%),
+        hsl(179, 85%, 66%)
+      );
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    animation: moveGradient 30s alternate infinite;
+  }
+  
+  .box::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: inherit;
+    background: inherit;
+  }
+  
+  @keyframes moveGradient {
+    50% {
+      background-position: 100% 50%;
+    }
+  }
